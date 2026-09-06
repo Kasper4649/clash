@@ -1,8 +1,13 @@
 name: 'bank'
 desc: |-
-  银行规则
+  银行相关规则
+  - 中国农业银行(abchina):拦截上报VPN状态
+  - 汇丰银行(HSBC):直连
+  - 中银香港(BOCHK):直连
 rules:
-  - 'DOMAIN,msmp.abchina.com.cn,REJECT'
+  # 拦截
   - 'DOMAIN-SUFFIX,msmp.abchina.com.cn,REJECT'
+
+  # 直连
   - 'DOMAIN-SUFFIX,hsbc.com.hk,DIRECT'
   - 'DOMAIN-SUFFIX,bochk.com,DIRECT'
